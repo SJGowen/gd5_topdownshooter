@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8365069242922450281}
   - component: {fileID: 644410844644920135}
   - component: {fileID: 9024695864704977065}
-  - component: {fileID: 8547399654113945940}
+  - component: {fileID: 3541374914602840935}
   m_Layer: 0
   m_Name: Cookie
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910206771686463353}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -87,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8547399654113945940
+--- !u!114 &3541374914602840935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

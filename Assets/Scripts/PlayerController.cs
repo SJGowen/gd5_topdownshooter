@@ -37,7 +37,9 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Destroy(Instantiate(projectilePrefab, transform.position, transform.rotation), destroyTime);
+            var collider = gameObject.GetComponent<Collider>();
+            Vector3 frontMiddle = collider.bounds.center + (transform.forward * collider.bounds.extents.z);
+            Destroy(Instantiate(projectilePrefab, frontMiddle, transform.rotation), destroyTime);
         }
     }
 
@@ -48,18 +50,13 @@ public class PlayerController : MonoBehaviour
 
     private float GetSpeed(string name)
     {
-        switch (name)
+        return name switch
         {
-            case "Farmer":
-                return 6f;
-            case "BorderCollie":
-                return 6f;
-            case "Rooster":
-                return 2f;
-            case "Moose":
-                return 8f;
-            default:
-                return 6f;
-            }
-        }
+            "Farmer" => 6f,
+            "BorderCollie" => 10f,
+            "Rooster" => 2f,
+            "Moose" => 8f,
+            _ => 6f,
+        };
+    }
 }

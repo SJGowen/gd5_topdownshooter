@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1908938744065659541}
   - component: {fileID: 1204808969281181559}
   - component: {fileID: 4174898239838985541}
-  - component: {fileID: 995642232864213943}
+  - component: {fileID: 7526123171815430221}
   m_Layer: 0
   m_Name: Bone
   m_TagString: Untagged
@@ -87,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &995642232864213943
+--- !u!114 &7526123171815430221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -3,12 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject projectilePrefab;
-    public float xMin = -23.8f;
-    public float xMax = 23.8f;
-    public float zMin = -14.4f;
-    public float zMax = 34.2f;
     public float destroyTime = 2.5f;
-    
 
     void Start()
     {
@@ -23,13 +18,13 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new (Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
 
         // Normalize the movement to ensure consistent speed in all directions
-        Debug.Log($"Player Name = {player.name}");
+        // Debug.Log($"Player Name = {player.name}");
         var speed = GetSpeed(player.name);
         movement = speed * Time.deltaTime * movement.normalized;
 
         // Apply clamping after adjusting movement
-        float horizontalPosition = Mathf.Clamp(transform.position.x + movement.x, xMin, xMax);
-        float verticalPosition = Mathf.Clamp(transform.position.z + movement.z, zMin, zMax);
+        float horizontalPosition = Mathf.Clamp(transform.position.x + movement.x, PlayingArea.XMin, PlayingArea.XMax);
+        float verticalPosition = Mathf.Clamp(transform.position.z + movement.z, PlayingArea.ZMin, PlayingArea.ZMax);
 
         // Update the position
         transform.position = new (horizontalPosition, 0, verticalPosition);
@@ -48,15 +43,20 @@ public class PlayerController : MonoBehaviour
         PlayerSelection.SetActivePlayer(gameObject);
     }
 
-    private float GetSpeed(string name)
+    public float GetSpeed(string name)
     {
+        if (name.IndexOf("(") > 0)
+        {
+            name = name[..name.IndexOf("(")];
+        }
+
         return name switch
         {
             "Farmer" => 6f,
             "BorderCollie" => 10f,
             "Rooster" => 2f,
             "Moose" => 8f,
-            _ => 6f,
+            _ => throw new System.Exception($"Unknown player name: {name}"),
         };
     }
 }

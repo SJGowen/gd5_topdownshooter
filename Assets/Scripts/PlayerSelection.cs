@@ -9,7 +9,7 @@ public class PlayerSelection : MonoBehaviour
         if (activePlayer != player)
         {
             activePlayer = player;
-            Debug.Log($"Active player set to: {activePlayer.name}");
+            // Debug.Log($"Active player set to: {activePlayer.name}");
         }
     }
 

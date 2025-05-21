@@ -2,19 +2,28 @@ using UnityEngine;
 
 public class PlayerSelection : MonoBehaviour
 {
-    private static GameObject activePlayer;
+    private static GameObject ControlledPlayer;
 
-    public static void SetActivePlayer(GameObject player)
+    private void Start()
     {
-        if (activePlayer != player)
+        var farmer = GameObject.Find("Farmer");
+        if (farmer != null)
         {
-            activePlayer = player;
+            PlayerSelection.SetControlledPlayer(farmer);
+        }
+    }
+
+    public static void SetControlledPlayer(GameObject player)
+    {
+        if (ControlledPlayer != player)
+        {
+            ControlledPlayer = player;
             // Debug.Log($"Active player set to: {activePlayer.name}");
         }
     }
 
-    public static GameObject GetActivePlayer()
+    public static GameObject GetControlledPlayer()
     {
-        return activePlayer;
+        return ControlledPlayer;
     }
 }

@@ -8,18 +8,18 @@ public class SpawnManager : MonoBehaviour
 
     void Update()
     {
-        GameObject player = PlayerSelection.GetActivePlayer();
+        GameObject player = PlayerSelection.GetControlledPlayer();
         if (player == null) return;
 
         animalIndex = Random.Range(0, 100);
-        if (animalIndex >= 0 && animalIndex <= animals.Length)
+        if (animalIndex >= 0 && animalIndex < animals.Length)
         {
             if (animals[animalIndex] != null && animals[animalIndex] != player)
             {
                 Vector3 randomPosition = new(
-                    Random.Range(-23.8f, 23.8f),
+                    Random.Range(PlayingArea.XMin, PlayingArea.XMax),
                     0,
-                    Random.Range(-14.4f, 34.2f)
+                    Random.Range(PlayingArea.ZMin, PlayingArea.ZMax)
                 );
                 Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
                 Instantiate(animals[animalIndex], randomPosition, randomRotation);

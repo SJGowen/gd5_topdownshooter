@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5926610157946594449}
   - component: {fileID: 3654937324177729356}
   - component: {fileID: 5734015386944358937}
+  - component: {fileID: 746392631266997575}
   m_Layer: 0
   m_Name: Carrot
   m_TagString: Projectile
@@ -100,3 +101,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+--- !u!135 &746392631266997575
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4914556575108496690}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.39531612
+  m_Center: {x: -0.0000076293945, y: 0.07085347, z: -0.000000059604645}

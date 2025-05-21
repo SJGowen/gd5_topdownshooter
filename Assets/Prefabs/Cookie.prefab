@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 644410844644920135}
   - component: {fileID: 9024695864704977065}
   - component: {fileID: 3541374914602840935}
+  - component: {fileID: 6514878201211918588}
   m_Layer: 0
   m_Name: Cookie
   m_TagString: Projectile
@@ -100,3 +101,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+--- !u!135 &6514878201211918588
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910206771686463353}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.43161488
+  m_Center: {x: -0.011282921, y: 0, z: -0.000000059604645}

@@ -46,25 +46,31 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Get the contact point normal
-            ContactPoint contact = collision.contacts[0];
-            Vector3 normal = contact.normal;
-            normal.y = 0; // Ensure the normal is 2D
-
-            // Reflect the current direction using the collision normal
-            MovementManager movementManager = GetComponent<MovementManager>();
-            if (movementManager != null)
+            if (gameObject != PlayerSelection.GetControlledPlayer())
             {
-                Vector3 reflected = Vector3.Reflect(movementManager.GetDirection(), normal);
-                reflected.y = 0f; // Ensure the reflected direction is 2D
-                if (reflected != Vector3.zero)
-                    movementManager.SetDirection(reflected.normalized);
+                // Get the contact point normal
+                ContactPoint contact = collision.contacts[0];
+                Vector3 normal = contact.normal;
+                normal.y = 0; // Ensure the normal is 2D
+
+                // Reflect the current direction using the collision normal
+                MovementManager movementManager = GetComponent<MovementManager>();
+                if (movementManager != null)
+                {
+                    Vector3 reflected = Vector3.Reflect(movementManager.GetDirection(), normal);
+                    reflected.y = 0f; // Ensure the reflected direction is 2D
+                    if (reflected != Vector3.zero)
+                        movementManager.SetDirection(reflected.normalized);
+                }
             }
         }
         else if (collision.gameObject.CompareTag("Projectile"))
         {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            if (gameObject != PlayerSelection.GetControlledPlayer())
+            {
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 

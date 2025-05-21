@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[System.Serializable]
 public class PlayingArea : MonoBehaviour
 {
     private static float xMin = -23.8f;

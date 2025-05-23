@@ -14,7 +14,6 @@ public class DestroyOutOfBoundsX : MonoBehaviour
         if (transform.position.x < leftLimit)
         {
             // Debug.Log($"Dog destruction {transform.position.x}");
-            PrefabExistance.dogExists = false;
             Destroy(gameObject);
         } 
         // Destroy balls if y position is less than bottomLimit

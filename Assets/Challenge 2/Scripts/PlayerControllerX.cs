@@ -5,15 +5,24 @@ using UnityEngine;
 public class PlayerControllerX : MonoBehaviour
 {
     public GameObject dogPrefab;
+    public float delay = 2f;
+    private float delayTime;
 
-    // Update is called once per frame
     void Update()
     {
+        //// On spacebar press, send dog
+        //if (Input.GetKeyDown(KeyCode.Space) && !PrefabExistance.dogExists)
+        //{
+        //    Instantiate(dogPrefab, transform.position, dogPrefab.transform.rotation);
+        //    PrefabExistance.dogExists = true;
+        //}
+
         // On spacebar press, send dog
-        if (Input.GetKeyDown(KeyCode.Space) && !PrefabExistance.dogExists)
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time > delayTime)
         {
+            //Debug.Log($"Time.time = {Time.time}, delayTime = {delayTime}");
+            delayTime = Time.time + delay;
             Instantiate(dogPrefab, transform.position, dogPrefab.transform.rotation);
-            PrefabExistance.dogExists = true;
         }
     }
 }

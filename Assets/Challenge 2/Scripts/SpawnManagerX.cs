@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SpawnManagerX : MonoBehaviour
 {
@@ -11,6 +9,7 @@ public class SpawnManagerX : MonoBehaviour
     private float spawnPosY = 30;
 
     private float startDelay = 1.0f;
+    // private float spawnInterval = 4.0f;
     private float spawnIntervalMin = 3.0f;
     private float spawnIntervalMax = 5.0f;
 
@@ -23,8 +22,8 @@ public class SpawnManagerX : MonoBehaviour
 
     private void ScheduleNextInvoke(float startDelay = 0)
     {
-        float randomTime = Random.Range(spawnIntervalMin, spawnIntervalMax);
-        Invoke(nameof(SpawnRandomBall), randomTime + startDelay);
+        float randomTime = (startDelay != 0) ? startDelay : Random.Range(spawnIntervalMin, spawnIntervalMax);
+        Invoke(nameof(SpawnRandomBall), randomTime);
     }
 
     // Spawn random ball at random x position at top of play area

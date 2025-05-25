@@ -1,13 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DestroyOutOfBoundsX : MonoBehaviour
 {
     private float leftLimit = -42;
     private float bottomLimit = -5;
+    private ScoreManagerX scoreManagerX;
 
-    // Update is called once per frame
+    private void Awake()
+    {
+        scoreManagerX = FindFirstObjectByType<ScoreManagerX>();
+    }
+
     void Update()
     {
         // Destroy dogs if x position less than left limit
@@ -20,6 +23,8 @@ public class DestroyOutOfBoundsX : MonoBehaviour
         else if (transform.position.y < bottomLimit)
         {
             // Debug.Log($"Ball destruction {transform.position.y}");
+            // Increment missed count for size of ball
+            scoreManagerX.IncrementBallsMissed(gameObject.name);
             Destroy(gameObject);
         }
     }

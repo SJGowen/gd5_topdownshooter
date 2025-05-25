@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerControllerX : MonoBehaviour
 {
@@ -10,15 +8,8 @@ public class PlayerControllerX : MonoBehaviour
 
     void Update()
     {
-        //// On spacebar press, send dog
-        //if (Input.GetKeyDown(KeyCode.Space) && !PrefabExistance.dogExists)
-        //{
-        //    Instantiate(dogPrefab, transform.position, dogPrefab.transform.rotation);
-        //    PrefabExistance.dogExists = true;
-        //}
-
         // On spacebar press, send dog
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time > delayTime)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1")) && Time.time > delayTime)
         {
             //Debug.Log($"Time.time = {Time.time}, delayTime = {delayTime}");
             delayTime = Time.time + delay;

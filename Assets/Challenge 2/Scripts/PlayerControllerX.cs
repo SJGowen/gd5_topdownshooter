@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class PlayerControllerX : MonoBehaviour
 {
-    public GameObject dogPrefab;
+    public GameObject[] dogPrefab;
+    public TMP_Dropdown dogBreed;
     public float delay = 2f;
     private float delayTime;
 
@@ -13,7 +15,7 @@ public class PlayerControllerX : MonoBehaviour
         {
             //Debug.Log($"Time.time = {Time.time}, delayTime = {delayTime}");
             delayTime = Time.time + delay;
-            Instantiate(dogPrefab, transform.position, dogPrefab.transform.rotation);
+            Instantiate(dogPrefab[dogBreed.value], transform.position, dogPrefab[dogBreed.value].transform.rotation);
         }
     }
 }

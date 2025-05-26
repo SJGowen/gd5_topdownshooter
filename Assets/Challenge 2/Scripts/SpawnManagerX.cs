@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class SpawnManagerX : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class SpawnManagerX : MonoBehaviour
     // private float spawnInterval = 4.0f;
     private float spawnIntervalMin = 3.0f;
     private float spawnIntervalMax = 5.0f;
+
+    public TMP_Dropdown ballSize;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,9 @@ public class SpawnManagerX : MonoBehaviour
 
         // instantiate ball at random spawn location
         GameObject ball = ballPrefabs[Random.Range(0, ballPrefabs.Length)];
+        if (ballSize.value == 1) ball = ballPrefabs[2];
+        if (ballSize.value == 2) ball = ballPrefabs[1];
+        if (ballSize.value == 3) ball = ballPrefabs[0];
         Instantiate(ball, spawnPos, ball.transform.rotation);
         ScheduleNextInvoke();
     }

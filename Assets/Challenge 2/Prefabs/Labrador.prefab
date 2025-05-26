@@ -5419,7 +5419,7 @@ GameObject:
   - component: {fileID: 8241448879431697766}
   - component: {fileID: 353968393887968187}
   m_Layer: 0
-  m_Name: Dog
+  m_Name: Labrador
   m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5518,8 +5518,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.12827098, y: 0.20225373, z: 0.2684607}
-  m_Center: {x: 0.0005657941, y: 0.08996773, z: 0.029463936}
+  m_Size: {x: 0.12827098, y: 0.1664518, z: 0.2623811}
+  m_Center: {x: 0.00056579115, y: 0.106517784, z: 0.0325037}
 --- !u!114 &8241448879431697766
 MonoBehaviour:
   m_ObjectHideFlags: 0

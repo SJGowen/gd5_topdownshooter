@@ -79,7 +79,7 @@ public class ScoreManagerX : MonoBehaviour
         }
 
         PlayAudioEffect(0);
-        Instantiate(confettiPrefab, gameObject.transform.position, Quaternion.identity);
+        Destroy(Instantiate(confettiPrefab, gameObject.transform.position, Quaternion.identity), 3);
     }
 
     public void IncrementBallsMissed(string ballName)

@@ -1,6 +1,7 @@
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class ScoreManagerX : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class ScoreManagerX : MonoBehaviour
     public int Ball3Missed { get => ball3Missed; private set => ball3Missed = value; }
 
     public Button PlayPauseResume;
+    public Toggle MuteSounds;
+    public GameObject confettiPrefab;
+    public AudioSource audioSource;
+    public AudioClip[] audioClips;
 
     private void Start()
     {
@@ -53,25 +58,28 @@ public class ScoreManagerX : MonoBehaviour
         }
     }
 
-    public void IncrementBallsCaught(string ballName)
+    public void IncrementBallsCaught(GameObject gameObject)
     {
-        if (ballName.StartsWith("Ball 1"))
+        if (gameObject.name.StartsWith("Ball 1"))
         { 
             Ball1Caught++;
             ball1CaughtGUI.text = $"{Ball1Caught}";
         }
 
-        if (ballName.StartsWith("Ball 2")) 
+        if (gameObject.name.StartsWith("Ball 2")) 
         {
             Ball2Caught++;
             ball2CaughtGUI.text = $"{Ball2Caught}";
         }
 
-        if (ballName.StartsWith("Ball 3")) 
+        if (gameObject.name.StartsWith("Ball 3")) 
         {
             Ball3Caught++;
             ball3CaughtGUI.text = $"{Ball3Caught}";
         }
+
+        PlayAudioEffect(0);
+        Instantiate(confettiPrefab, gameObject.transform.position, Quaternion.identity);
     }
 
     public void IncrementBallsMissed(string ballName)
@@ -93,5 +101,14 @@ public class ScoreManagerX : MonoBehaviour
             Ball3Missed++;
             ball3MissedGUI.text = $"{Ball3Missed}";
         }
+
+        PlayAudioEffect(1);
+    }
+
+    private void PlayAudioEffect(int audioEffect)
+    {
+        if (MuteSounds.isOn) return;
+        audioSource.clip = audioClips[audioEffect];
+        audioSource.PlayOneShot(audioSource.clip);
     }
 }

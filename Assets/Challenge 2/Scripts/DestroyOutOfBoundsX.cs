@@ -25,6 +25,7 @@ public class DestroyOutOfBoundsX : MonoBehaviour
             // Debug.Log($"Ball destruction {transform.position.y}");
             // Increment missed count for size of ball
             scoreManagerX.IncrementBallsMissed(gameObject.name);
+
             Destroy(gameObject);
         }
     }

@@ -8,10 +8,12 @@ public class DetectCollisionsX : MonoBehaviour
     {
         scoreManagerX = FindFirstObjectByType<ScoreManagerX>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         // Increment caught score for size of ball
-        scoreManagerX.IncrementBallsCaught(gameObject.name);
+        scoreManagerX.IncrementBallsCaught(gameObject);
+
         Destroy(gameObject);
     }
 }

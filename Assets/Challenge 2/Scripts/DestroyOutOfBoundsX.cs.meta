@@ -4,8 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - dog: {fileID: 8241448880393145375, guid: 3e5fe95e580114a5f8f8348678e77463, type: 3}
-  - ball: {instanceID: 0}
+  - audioSource: {fileID: 7452859676993758078, guid: 8dbf64a809a43864d9610b579b179a98, type: 3}
+  - commiserationSound: {fileID: 8300000, guid: 2669e69bcedb3da4d832504fce16dcdf, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

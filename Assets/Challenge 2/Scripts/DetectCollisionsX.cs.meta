@@ -3,7 +3,10 @@ guid: 22f880a64e2c84b0a8be42be264f9bad
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - audioSource: {fileID: 7452859676993758078, guid: 8dbf64a809a43864d9610b579b179a98, type: 3}
+  - celebrationSound: {fileID: 8300000, guid: cf4efd1068bcc3c4aaf7311effe29021, type: 3}
+  - confettiPrefab: {fileID: 2547524620671560061, guid: 22f79f5985579b542aca05c232a45ec0, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
